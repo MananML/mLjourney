@@ -1,3 +1,8 @@
+import random
+
+ROW = 3
+COLUMN = 3
+
 MIN_DEPOSIT = 30
 MAX_DEPOSIT = 300
 
@@ -15,8 +20,60 @@ symbols = {
     "🌚": 6
 }
 
+symbols_value = {
+    "🍀": 7, 
+    "🌰": 5,
+    "🥝": 4,
+    "🍇": 6,
+    "🌚": 4
+}
+ 
+def get_slot_machin_spin(rows, cols, symbols):
+    all_symbols = []
 
+    for symbol, value in symbols.items():
+        for _ in range(value):
+            all_symbols.append(symbol)
+        
+    columns = []
+    for _ in range(cols):
+        column = []
+        current_symbols = all_symbols.copy()
 
+        for _ in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+            column.append(value)
+
+        columns.append(column)
+
+    return columns
+
+def print_slot_machine_spin(columns, rows):
+    for row in rows:
+        for column in columns:
+            print(column[row])
+
+        print()
+
+def check_winning(slots, lines, value, bet):
+    winning = 0
+    lines_won_on = []
+
+    for line in range(lines):
+        symbol = slots[0][line]
+
+        for _ in slots:
+            symbol_to_check = _[line]
+
+            if symbol_to_check != symbol:
+                break
+
+        else:
+            winning = value[symbol] * bet
+            lines_won_on.append(line + 1)
+
+    return winning, lines_won_on
 
 def deposit():
     while True:
@@ -29,7 +86,6 @@ def deposit():
 
         else:
             print("Please input a digit.")
-
 
 def lines():
     while True:
@@ -56,8 +112,13 @@ def bet():
     else:
         print("Please enter a digit.")
 
+def spin():
+    ...
 
+def main():
+    ...
 
+main()
 
 
 
