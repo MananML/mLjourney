@@ -75,6 +75,7 @@ def check_winning(slots, lines, value, bet):
 
     return winning, lines_won_on
 
+#get users deposit
 def deposit():
     while True:
         deposit = input("How much would you like to deposit? ")
