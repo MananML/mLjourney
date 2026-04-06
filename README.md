@@ -1,4 +1,4 @@
-## 📘 Learning Journey
+## 📘 Machine Learning Journey
 
 Welcome to my learning repository.
 
