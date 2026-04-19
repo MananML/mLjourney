@@ -1,5 +1,5 @@
 
-
+from com_bination import combination
 def user_input():
     while True:
         power = input("Input the power of the binomial expression: ")
@@ -9,26 +9,6 @@ def user_input():
             print("Please enter a digit.")
         
         return power
-
-def factorial(num):
-    i = 1
-    lst_num = [num]
-
-    while i != num:
-        lst_num.append(num - i)
-        i += 1
-    result = 1
-    for _ in lst_num:
-        result *= _
-    
-    return result
-
-def combination(n, r):
-    n_fact = factorial(n)
-    r_fact = factorial(r)
-    nr_fact = factorial(n-r)
-    
-    return int((n_fact)/(nr_fact * r_fact))
 
 
 def calculate(n):
@@ -55,4 +35,5 @@ def main():
 
     print(*calculate(power)) 
 
-main()
+if __name__ == main():
+    main()

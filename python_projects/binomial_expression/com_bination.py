@@ -1,4 +1,5 @@
 
+from perm_utation import permutation, factorial
 def user_input():
     print("ⁿCᵣ")
     while True:
@@ -10,29 +11,14 @@ def user_input():
         else:
             print("Please input a digit.") 
 
-def factorial(num):
-    i = 1
-    lst_num = [num]
-
-    while i != num:
-        lst_num.append(num - i)
-        i += 1
-    result = 1
-    for _ in lst_num:
-        result *= _
-    
-    return result
-
 def combination(n, r):
-    n_fact = factorial(n)
     r_fact = factorial(r)
-    nr_fact = factorial(n-r)
     
-    return int((n_fact)/(nr_fact * r_fact))
+    return int(permutation(n, r)/r_fact)
 
 def main():
     n, r = user_input()
     print(combination(n, r))
 
-
-main()
+if __name__ == "__main__":
+    main()

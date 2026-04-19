@@ -23,7 +23,7 @@ def factorial(num):
     
     return result
 
-def combination(n, r):
+def permutation(n, r):
     n_fact = factorial(n)
     r_fact = factorial(r)
     nr_fact = factorial(n-r)
@@ -32,7 +32,7 @@ def combination(n, r):
 
 def main():
     n, r = user_input()
-    print(combination(n, r))
+    print(permutation(n, r))
 
-
-main()
+if __name__ == "__main__":
+    main()
