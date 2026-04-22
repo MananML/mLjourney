@@ -16,10 +16,10 @@ MIN_BET = 10
 
 # symbols to be printed on our slot machine 
 SYMBOLS = {
-    "🍀": 14, 
-    "🌰": 15,
+    "🍀": 8, 
+    "🌰": 11,
     "🥝": 17,
-    "🍇": 15,
+    "🍇": 10,
     "🌚": 16
 }
 
