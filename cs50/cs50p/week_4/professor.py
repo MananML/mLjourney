@@ -1,40 +1,68 @@
 import random
 
-levels = ["1", "2", "3"]
 
 def main():
+    right = 0
+    wrong = 0
+
+
     level = get_level()
-    for i in range(11):
-        x, y = generate_integer(level)
 
-        question = input(f"{x} + {y} = ")
-        answer = eval(question)
 
-        if question == answer:
-            continue
-            
-        for _ in range(3):
-            if question == answer:
-                break
+    numbers = generate_integer(level)
+    xs = []
+    ys = []
+
+    for i in range(len(numbers)):
+        if i % 2 == 0:
+            xs.append(numbers[i])
+
         else:
-            print(answer)  
-            
+            ys.append(numbers[i])
 
+    for _ in range(10):
+       
+
+        question = f"{xs[_]} + {ys[_]}"
+        answer = eval(question)
+        
+        for i in range(3):                
+            
+                user_input = input(f"{question} = ")
+
+                if user_input.isdigit():    
+                    if int(user_input) == answer:
+                        right += 1
+                        break
+
+                    else:
+                        print("EEE")
+                else:
+                    print("EEE")
+        else:
+            wrong += 1
+            print(f"{question} = {answer}")
+                        
+
+    print(f"Scored: {right}")
 
 def get_level():
     while True:
-        level = input("Level: ")
-
-        if level.isdigit() and level in levels:
-            level = int(level)
-            return level
+        i = input("Level: ")
+        if i.isdigit():
+            i = int(i)
+            if i in range(1, 4):
+                return i
 
 def generate_integer(level):
-    x = random.randint(0, pow(10, level))
-    y = random.randint(0, pow(10, level))    
+    if level > 1: 
+        n = [random.randint(pow(10, level-1), pow(10, level) - 1) for _ in range(20)]
 
-    pair = x, y
-    return pair
+    else:
+        n = [random.randint(0, 9) for _ in range(20)]
+
+    return n
+    
 
 if __name__ == "__main__":
     main()

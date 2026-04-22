@@ -1,4 +1,1 @@
-import random
-
-
-x = "cat"
+print("test")
