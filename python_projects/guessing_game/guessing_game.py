@@ -18,15 +18,15 @@ def get_users_input():
 def check_users_guess(number):
     global GUESS
     while True:
-        guess = input("Make a guess: ")
+        guess = input("\nMake a guess: ")
         GUESS += 1
         if guess.isdigit():
             guess = int(guess)
             if guess == number:
-                print("You guessed right.")
+                print("\nYou guessed right.")
                 break
             else:
-                print("You guessed wrong.")
+                print("\nYou guessed wrong.")
                 if guess < number:
                     print("Your guess is less than the required number")
                 elif guess > number:
