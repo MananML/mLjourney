@@ -1,4 +1,4 @@
-# 🎰 Slot Machine Simulator in Python
+## 🎰 ***Slot Machine Simulator in Python***
 
 This project is a simple slot machine simulator built with Python. It recreates the basic logic of a casino-style slot machine in a text-based format, where the user can place a bet, spin the reels, and check whether they win based on the symbols that appear.
 
@@ -6,7 +6,7 @@ The project is designed as a learning exercise to practice Python fundamentals s
 
 ---
 
-## 📌 Project Description
+### 📌 ***Project Description***
 
 The slot machine works by first collecting a deposit from the user. After that, the user chooses:
 
@@ -19,7 +19,7 @@ Each symbol has a specific value. The winning amount is calculated by multiplyin
 
 ---
 
-## ⚙️ How It Works
+### ⚙️ ***How It Works***
 
 The game follows these steps:
 
@@ -34,7 +34,7 @@ The game follows these steps:
 
 ---
 
-## 💡 Game Logic
+### 💡 ***Game Logic***
 
 The core idea behind the game is simple:
 
@@ -47,7 +47,7 @@ This makes the game both random and interactive, while also showing how basic pr
 
 ---
 
-## ✨ Features
+### ✨ ***Features***
 
 - User deposit system
 - Multiple betting lines
@@ -59,7 +59,7 @@ This makes the game both random and interactive, while also showing how basic pr
 
 ---
 
-## 🖥️ What to Expect When Running the Program
+### 🖥️ ***What to Expect When Running the Program***
 
 When the program starts, it will ask the user to deposit money into the game. After that, the user will be prompted to choose the number of lines to bet on and the amount to wager on each line.
 
@@ -69,7 +69,7 @@ The game can continue until the user decides to stop or runs out of balance.
 
 ---
 
-## 🛠️ Concepts Used
+### 🛠️ ***Concepts Used***
 
 This project demonstrates several important Python concepts, including:
 
@@ -83,13 +83,21 @@ This project demonstrates several important Python concepts, including:
 
 ---
 
-## 🚀 Purpose of the Project
+### 🚀 ***Purpose of the Project***
 
 The purpose of this project is to practice Python programming by building a small but functional game. It also helps strengthen understanding of logic design, flow control, and how to manage user interaction in a program.
 
 ---
 
-## 📚 Summary
+### 🛠️ ***Possible Improvements***
+
+Future improvements may include:
+
+- Improving the user interface (GUI)
+
+---
+
+### 📚 ***Summary***
 
 This Slot Machine Simulator is a beginner-friendly Python project that mimics the logic of a casino slot machine. It allows the user to deposit money, place bets, spin the reels, and receive winnings based on symbol matches.
 
