@@ -1,4 +1,4 @@
-# 🔢 Number Guessing Game in Python
+## 🔢 ***Number Guessing Game in Python***
 
 This is a simple number guessing game built with Python. The program allows the user to choose a range, and then the computer randomly selects a number from within that range. The user must then try to guess the hidden number.
 
@@ -6,7 +6,7 @@ It is a fun beginner-friendly project that helps demonstrate the use of random n
 
 ---
 
-## 🎯 Project Description
+### 🎯 ***Project Description***
 
 The goal of the game is straightforward: guess the number chosen by the computer.
 
@@ -16,7 +16,7 @@ The game continues by giving feedback after each guess, helping the user know wh
 
 ---
 
-## ⚙️ How It Works
+### ⚙️ ***How It Works***
 
 1. The user provides a range for the game.
 2. The computer selects a random number from that range.
@@ -27,7 +27,7 @@ The game continues by giving feedback after each guess, helping the user know wh
 
 ---
 
-## ✨ Features
+### ✨ ***Features***
 
 - User-defined guessing range
 - Random number generation
@@ -37,7 +37,7 @@ The game continues by giving feedback after each guess, helping the user know wh
 
 ---
 
-## 🖥️ What to Expect When Running the Program
+### 🖥️ ***What to Expect When Running the Program***
 
 When the program starts, it will ask the user to enter a range. After that, the game begins immediately.
 
@@ -47,9 +47,9 @@ The game ends when the user guesses the correct number.
 
 ---
 
-## 📌 Concepts Used
+### 📌 ***Concepts Used***
 
-This project makes use of:
+***This project makes use of***:
 
 - Python input handling
 - Random number generation
@@ -59,24 +59,20 @@ This project makes use of:
 
 ---
 
-## 🚀 Purpose of the Project
+### 🚀 ***Purpose of the Project***
 
 This project was built as a practice exercise to strengthen understanding of Python fundamentals while creating something interactive and engaging. It is also a good introduction to how simple games can be built using logic and control flow.
 
 ---
 
-## 🛠️ Possible Improvements
+### 🛠️ ***Possible Improvements***
 
 Future improvements may include:
 
-- Adding a score system
-- Tracking the number of attempts
-- Allowing difficulty levels
-- Adding a replay option
-- Improving the user interface
+- Improving the user interface (GUI)
 
 ---
 
-## 📚 Summary
+### 📚 ***Summary***
 
 The Number Guessing Game is a simple but effective Python project that combines randomness, logic, and user interaction. It is a great beginner project for practicing core programming concepts in a practical way.
