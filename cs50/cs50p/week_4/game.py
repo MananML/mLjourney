@@ -8,15 +8,15 @@ def level():
             if level > 0:
                 return level
         else:
-            print("Please enter a digit.")    
+            print("Please enter a digit.")
 
 def users_guess():
     while True:
         guess = input("Guess: ")
         if guess.isdigit():
             guess = int(guess)
-            return guess
-            
+            if guess > 0:
+                return guess
 
 def check_guess(number):
     while True:

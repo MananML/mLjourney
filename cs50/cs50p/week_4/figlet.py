@@ -2,31 +2,31 @@ import sys
 import random
 from pyfiglet import Figlet
 
-font_parameter = ["-f", "--font"]
+def main():
 
-def convert(s):
+    font_parameter = ["-f", "--font"]
     figlet = Figlet()
     fonts = figlet.getFonts()
 
     if len(sys.argv) == 3:
-        if sys.argv[1] in font_parameter and sys.argv[2] in fonts:
-            figlet.setFont(font=sys.argv[2])
-        
-        else:
+        if not (sys.argv[1] in font_parameter and sys.argv[2] in fonts):
             sys.exit("Input a valid font/font parameter")
-        
+        else:
+            figlet.setFont(font=sys.argv[2])
+
     elif len(sys.argv) == 1:
         new_font = random.choice(fonts) 
         figlet.setFont(font=new_font)   
 
     else:
-        sys.exit("wrong input")
+        sys.exit("Input a valid font/font parameter")
 
-    return figlet.renderText(s)
 
-def main():
     text = input("Input: ")
+    ctext = figlet.renderText(text)
 
-    print(convert(text))
 
-main()
+    print(f"Output: {ctext}")
+
+if __name__ == "__main__":
+    main()

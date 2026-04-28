@@ -14,6 +14,6 @@ def main():
         except EOFError:
             break
 
-    print(f"Adieu, adieu, to {adieu(names)}")
+    print(f"\nAdieu, adieu, to {adieu(names)}")
 
 main()

@@ -1,5 +1,5 @@
 import requests
-import json
+import sys
 
 try:
     headers = {
@@ -11,7 +11,19 @@ try:
     content = response.json()
     
     btc = content['data']['priceUsd']
-    print(btc)
+    btc = float(btc)
+    
+    if len(sys.argv) > 1:
+        n = sys.argv[1]
+        if n.isnumeric:
+            n = float(n)
+            amount = n * btc
+            print(f"${amount:,.4f}")
+
+        else:
+            sys.exit("Command-line argument  is not a number.")
+    else:
+        sys.exit("Missing command-line argument.")
 
 except requests.RequestException:
     print("Error")
