@@ -7,13 +7,43 @@ def main():
 
 
 def convert(s):
-    if match := re.fullmatch(r"((?:[1-9]|1[0-2]):?(?:[0-5]\d)? AM) to ([1-9]|1[0-2]):?([0-5]\d)? PM", s):
-        AM, PM = check_AM(match.group(1), match.group(2)), check_PM(match.group(3), (match.group(4)))
-        return f"{AM} to {PM}"
-    
+    if match := re.fullmatch(r"((?:[1-9]|1[0-2]):?(?:[0-5]\d)? (?:AM|PM)) to ((?:[1-9]|1[0-2]):?(?:[0-5]\d)? (?:PM|AM))", s):
+        output = []
+        patterns = match.groups()
+
+        if patterns[0].split()[1] == "AM":
+            if ":" in patterns[0].split()[0]:
+                hours, minutes = patterns[0].split()[0].split(":")
+                output.append(check_AM(hours, minutes))
+            else:
+                output.append(check_AM(patterns[0].split()[0], "00"))
+
+        else:
+            if ":" in patterns[0].split()[0]:
+                hours, minutes = patterns[0].split()[0].split(":")
+                output.append(check_PM(hours, minutes))
+            else:
+                output.append(check_PM(patterns[0].split()[0], "00"))
+
+        if patterns[1].split()[1] == "AM":
+            if ":" in patterns[1].split()[0]:
+                hours, minutes = patterns[1].split()[0].split(":")
+                output.append(check_AM(hours, minutes))
+            else:
+                output.append(check_AM(patterns[1].split()[0], "00"))
+
+        else:
+            if ":" in patterns[1].split()[0]:
+                hours, minutes = patterns[1].split()[0].split(":")
+                output.append(check_PM(hours, minutes))
+            else:
+                output.append(check_PM(patterns[1].split()[0], "00"))
+
+        return f"{output[0]} to {output[1]}"
+
     else:
         raise ValueError
-    
+
 def check_AM(a, b):
     b= str(b).strip(" AM")
     if 1 <= int(a) < 12:
