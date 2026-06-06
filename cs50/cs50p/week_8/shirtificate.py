@@ -1,51 +1,33 @@
-from fpdf import FPDF
-
-pdf = FPDF()
-pdf.add_page()
-
-pdf.set_font("Helvetica", size=16)
-pdf.cell(100, 40 ,text="Hello, PDF!")
-
-pdf.output("hello.pdf")
-
-
-
-"""
-pdf = FPDF(orientation="P", unit="mm", format="A4")
-
-"""
-
-
 
 from fpdf import FPDF
 
 
-class PDF(FPDF):
+class Cs50(FPDF):
+    def __init__(self, name):
+        super().__init__(orientation="P", unit="mm", format="A4")
+        self.name = name
+
     def header(self):
-        # Rendering logo:
-        self.image("../docs/fpdf2-logo.png", 10, 8, 33)
-        # Setting font: helvetica bold 15
-        self.set_font("helvetica", style="B", size=15)
-        # Moving cursor to the right:
-        self.cell(80)
-        # Printing title:
-        self.cell(30, 10, "Title", border=1, align="C")
-        # Performing a line break:
-        self.ln(20)
+        self.set_font("helvetica", "B", 40)
+        self.cell(0, 20, "CS50 Shirtificate", align="C")
 
-    def footer(self):
-        # Position cursor at 1.5 cm from bottom:
-        self.set_y(-15)
-        # Setting font: helvetica italic 8
-        self.set_font("helvetica", style="I", size=8)
-        # Printing page number:
-        self.cell(0, 10, f"Page {self.page_no()}/{{nb}}", align="C")
+    def shirtificate(self):
+        self.image("shirtificate.png", x=10, y=60, w=190)
+        self.set_font("helvetica", "B", 25)
+        self.set_text_color(255,255,255)
+        self.set_xy(0, 140)
+        self.cell(210, 10, f"{self.name} took CS50", align="C")
+
+def main():
+    name = input("Name: ")
+
+    pdf = Cs50(name)
+
+    pdf.add_page()
+    pdf.shirtificate()
+
+    pdf.output("shirtificate.pdf")
 
 
-# Instantiation of inherited class
-pdf = PDF()
-pdf.add_page()
-pdf.set_font("Times", size=12)
-for i in range(1, 41):
-    pdf.cell(0, 10, f"Printing line number {i}", new_x="LMARGIN", new_y="NEXT")
-pdf.output("new-tuto2.pdf")
+if __name__ == "__main__":
+    main()

@@ -1,23 +1,33 @@
-class Vault:
-    def __init__(self, galleons=0, sickles = 0, knuts = 0) -> None:
-        self.galleons = galleons
-        self.sickles = sickles
-        self.knuts = knuts
 
-    def __add__(self, other):
-        galleons = self.galleons + other.galleons
-        sickles = self.sickles + other.sickles
-        knuts = self.knuts + other.knuts
+from fpdf import FPDF
 
-        return Vault(galleons, sickles, knuts)
-    
-    def __str__(self) -> str:
-        return f"{self.galleons}, {self.sickles}, {self.knuts}"
-                 
 
-potter = Vault(100, 30, 90)
-wesley = Vault(1, 2, 3)
+class Cs50(FPDF):
+    def __init__(self, name):
+        super().__init__(orientation="P", unit="mm", format="A4")
+        self.name = name
 
-total = potter + wesley
+    def header(self):
+        self.set_font("helvetica", "B", 40)
+        self.cell(0, 20, "CS50 Shirtificate", align="C")
 
-print(total)
+    def shirtificate(self):
+        self.image("cs50p/week_8/shirtificate.png", x=10, y=60, w=190)
+        self.set_font("helvetica", "B", 25)
+        self.set_text_color(255,255,255)
+        self.set_xy(0, 140)
+        self.cell(210, 10, f"{self.name} took CS50", align="C")
+
+def main():
+    name = input("Name: ")
+
+    pdf = Cs50(name)
+
+    pdf.add_page()
+    pdf.shirtificate()
+
+    pdf.output("h.pdf")
+
+
+if __name__ == "__main__":
+    main()
