@@ -4,8 +4,11 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["requests",
-"minsearch",
-"openai",
-"jupyter",
-"python-dotenv"]
+dependencies = [
+    "requests",
+    "minsearch",
+    "openai",
+    "jupyter",
+    "python-dotenv",
+    "ipykernel>=7.3.0",
+]
