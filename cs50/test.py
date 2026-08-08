@@ -1,8 +1,10 @@
-import argparse
+def f(n):
+    if n == 1:
+        return 1
 
-p = argparse.ArgumentParser(description="Meow like a cat")
-p.add_argument("-n", default=1, help="number of times to meow", type=int)
-args = p.parse_args()
+    return n * f(n - 1)
 
-for _ in range(int(args.n)):
-    print("Meow")
+
+r = f(4)
+
+print(r)
